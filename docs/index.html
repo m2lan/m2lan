@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chat with m2lan</title>
+<meta name="description" content="直接和 m2lan 聊天，无需注册。" />
+<link rel="icon" href="https://github.com/m2lan.png" />
+<link rel="stylesheet" href="./style.css" />
+
+<script>
+  window.contactWidget = {
+    __options: { identifier: 'df51b626a79cdad95c', autoShow: true }
+  };
+  (function () {
+    var u = new URL(location.href);
+    if (!u.searchParams.get('identifier')) {
+      u.searchParams.set('identifier', 'df51b626a79cdad95c');
+      u.searchParams.set('autoShow', 'true');
+      history.replaceState(null, '', u.toString());
+    }
+  })();
+</script>
+<script src="https://trtc.io/knocket-sdk/sdk.js?identifier=df51b626a79cdad95c&autoShow=true" async></script>
+</head>
+<body>
+  <main class="card">
+    <img class="avatar" src="https://github.com/m2lan.png?size=240" alt="m2lan" width="96" height="96" />
+    <h1>m2lan</h1>
+    <p class="status"><span class="dot"></span><span id="status">通常几分钟内回复</span></p>
+
+    <p class="lead">有什么想聊的，直接说。不用注册，不用加好友。</p>
+
+    <a class="cta" id="cta" href="#chat" role="button">
+      <span class="cta-icon">💬</span>
+      <span id="cta-text">开始聊天</span>
+    </a>
+
+    <ul class="facts">
+      <li><strong>0</strong><span>注册步骤</span></li>
+      <li><strong>实时</strong><span>消息直达</span></li>
+      <li><strong>图片</strong><span>文件也行</span></li>
+    </ul>
+
+    <p class="hint" id="hint">聊天气泡在右下角，点开就能发消息。</p>
+  </main>
+
+  <footer class="foot">
+    <a href="https://knocket.trtc.io/" target="_blank" rel="noopener">Knocket</a> · 免费实时聊天
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
